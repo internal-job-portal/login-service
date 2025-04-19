@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.ukg.login_service.dto.LoginRequest;
 import com.ukg.login_service.dto.UserDetailsDTO;
 
-@FeignClient(name = "employee-service")
+@FeignClient(name = "employee-service", url = "${employee-service.url}")
 public interface EmployeeClient {
     @PostMapping("/api/employee/verify")
     UserDetailsDTO verifyCredentials(@RequestBody LoginRequest loginRequest);

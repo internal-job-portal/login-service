@@ -8,7 +8,7 @@ import com.ukg.login_service.dto.LoginRequest;
 import com.ukg.login_service.dto.UserDetailsDTO;
 
 
-@FeignClient(name = "hr-service")
+@FeignClient(name = "hr-service", url = "${hr-service.url}")
 public interface HRClient {
     @PostMapping("/api/hr/verify")
     UserDetailsDTO verifyCredentials(@RequestBody LoginRequest loginRequest);
